@@ -6,7 +6,6 @@ import NextIcon from "@/assets/images/nexticon.png";
 import Therapist1 from "@/assets/images/therapist1.jpg";
 import Therapist2 from "@/assets/images/therapist2.jpg";
 import React, { useState, ReactNode } from "react";
-import { YoutubeIcon } from "@/utils/svgicons";
 import ReactLoading from "react-loading";
 interface ModalProps {
   isOpen: boolean;
@@ -74,7 +73,6 @@ const VideosWellness = (props: any) => {
                     className="w-full rounded-[20px] aspect-[1/0.8] object-cover"
                   />
                   <div className="absolute inset-0 flex items-center justify-center">
-                    <YoutubeIcon />
                   </div>
                 </div>
                 <div>

@@ -1,6 +1,5 @@
 "use client";
-import ClientTable from "@/app/admin/components/ClientTable";
-import { getClientsPageData } from "@/services/admin/admin-service";
+
 import { useEffect, useState } from "react";
 import useSWR from "swr";
 import SearchBar from "../components/SearchBar";
@@ -10,8 +9,8 @@ const Page: React.FC = () => {
     const { data: session } = useSession();
     const [query, setQuery] = useState('');
     const filterStr = query ? `status=${query}` : ''
-    const { data, error, isLoading, mutate } = useSWR(`/admin/clients?${filterStr}`, getClientsPageData);
-    const clientsData: any= data?.data; 
+    //const { data, error, isLoading, mutate } = useSWR(`/admin/clients?${filterStr}`, getClientsPageData);
+    //const clientsData: any= data?.data; 
     const userRole = (session as any)?.user?.role;
  
     useEffect(() => {
@@ -64,7 +63,7 @@ const Page: React.FC = () => {
         </select>
         </div>
         </div>
-        <ClientTable clientsData={clientsData} mutate={mutate}  error={error} isLoading={isLoading} setQuery = {setQuery} role={userRole}  />
+        {/* <ClientTable clientsData={clientsData} mutate={mutate}  error={error} isLoading={isLoading} setQuery = {setQuery} role={userRole}  /> */}
         </>
     );
 }; 

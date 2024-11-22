@@ -1,7 +1,6 @@
 "use client";
 import { useState } from "react";
 import { usePathname } from 'next/navigation';
-import { BillingInsuranceIcon, ChangePasswordIcon, DashboardIcon, Humbruger, Logo, LogOut, PlansIcon, ProfileIcon, WellnessIcon } from "@/utils/svgicons";
 import Link from "next/link";
 // import './SideNav.css'; 
 import { useRouter } from "next/navigation";
@@ -31,11 +30,10 @@ const MobileHeader = () => {
 
         <div className="logoContainer">
           <Link href="/customer/dashboard">
-            <Logo />
+            
           </Link>
         </div>
         <button onClick={toggleSidebar} className="hamburgerButton">
-          <Humbruger />
         </button>
       </div>
       <div className={`sideNav ${isCollapsed ? 'collapsed' : ''} h-[100%] overflo-custom`}>
@@ -44,37 +42,31 @@ const MobileHeader = () => {
           <ul className="navList">
             <li onClick={toggleSidebar} className={isActive('/customer/dashboard')}>
               <Link href="/customer/dashboard">
-                <DashboardIcon />
                 <span>Dashboard</span>
               </Link>
             </li>
             <li onClick={toggleSidebar} className={isActive('/customer/wellness')}>
               <Link href="/customer/wellness">
-                <WellnessIcon />
                 <span>Wellness</span>
               </Link>
             </li>
             <li onClick={toggleSidebar}  className={isActive('/customer/profile')}>
               <Link href="/customer/profile">
-                <ProfileIcon />
                 <span>Profile</span>
               </Link>
             </li>
             <li onClick={toggleSidebar} className={isActive('/customer/change-password')}>
               <Link href="/customer/change-password">
-                <ChangePasswordIcon />
                 <span>Change Password</span>
               </Link>
             </li>
             <li onClick={toggleSidebar} className={isActive('/customer/billing-insurance')}>
               <Link href="/customer/billing-insurance">
-                <BillingInsuranceIcon />
                 <span>Billing & Insurance</span>
               </Link>
             </li>
             <li onClick={toggleSidebar} className={isActive('/customer/plans')}>
               <Link href="/customer/plans">
-              <PlansIcon/>
                 <span>Plans</span>
               </Link>
             </li>
@@ -84,7 +76,6 @@ const MobileHeader = () => {
           <ul className="navList">
             <li className="!m-0">
               <a onClick={handleLogout} style={{ cursor: 'pointer' }}>
-                <LogOut />
                 <span className="text-[#283C63] text-[600]">Log Out</span>
               </a>
             </li>

@@ -3,7 +3,6 @@ import ReactPaginate from "react-paginate";
 import Image from "next/image";
 import PervIcon from "@/assets/images/pervicon.png";
 import NextIcon from "@/assets/images/nexticon.png";
-import { ViewIcon } from "@/utils/svgicons";
 import Therapist1 from "@/assets/images/therapist1.jpg";
 import Therapist2 from "@/assets/images/therapist2.jpg";
 import Therapist3 from "@/assets/images/therapist3.jpg";
@@ -133,7 +132,6 @@ const PreviousAppointments = (props: any) => {
                 <td>{item.billingAmount}</td>
                 <td>
                   <span className="cursor-pointer w-[26px] flex" onClick={handleViewTeam}>
-                    <ViewIcon />
                   </span>
                 </td>
               </tr>

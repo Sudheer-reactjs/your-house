@@ -1,7 +1,6 @@
 "use client";
 import { useState } from "react";
 import { usePathname } from 'next/navigation';
-import { BillingInsuranceIcon, ChangePasswordIcon, DashboardIcon, Humbruger, Logo, LogOut, PlansIcon, ProfileIcon, WellnessIcon } from "@/utils/svgicons";
 import Link from "next/link";
 import './SideNav.css';
 import { useRouter } from "next/navigation";
@@ -31,48 +30,40 @@ const SideNav = () => {
           {!isCollapsed && (
             <div className="logoContainer">
               <Link href="/customer/dashboard">
-                <Logo />
               </Link>
             </div>
           )}
           <button onClick={toggleSidebar} className="hamburgerButton">
-            <Humbruger />
           </button>
         </div>
         <ul className="navList">
           <li className={isActive('/customer/dashboard')}>
             <Link href="/customer/dashboard">
-              <DashboardIcon />
               {!isCollapsed && <span>Dashboard</span>}
             </Link>
           </li>
           <li className={isActive('/customer/wellness')}>
             <Link href="/customer/wellness">
-              <WellnessIcon />
               {!isCollapsed && <span>Wellness</span>}
             </Link>
           </li>
           <li className={isActive('/customer/profile')}>
             <Link href="/customer/profile">
-              <ProfileIcon />
               {!isCollapsed && <span>Profile</span>}
             </Link>
           </li>
           <li className={isActive('/customer/change-password')}>
             <Link href="/customer/change-password">
-              <ChangePasswordIcon />
               {!isCollapsed && <span>Change Password</span>}
             </Link>
           </li>
           <li className={isActive('/customer/billing-insurance')}>
             <Link href="/customer/billing-insurance">
-              <BillingInsuranceIcon />
               {!isCollapsed && <span>Billing & Insurance</span>}
             </Link>
           </li>
           <li className={isActive('/customer/plans')}>
             <Link href="/customer/plans">
-            <PlansIcon/>
               {!isCollapsed && <span>Plans</span>}
             </Link>
           </li>
@@ -82,7 +73,6 @@ const SideNav = () => {
         <ul className="navList">
           <li className="!m-0">
             <a onClick={handleLogout} style={{ cursor: 'pointer' }}>
-              <LogOut />
               {!isCollapsed && <span className="text-[#283C63] text-[600]">Log Out</span>}
             </a>
           </li>

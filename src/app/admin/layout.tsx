@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import "./adminstyles.css";
 import SideNav from "@/app/admin/components/SideNav";
 import localFont from "next/font/local";
-import MobileHeader from "@/app/admin/components/MobileHeader";
 import { auth } from "@/auth";
 import { redirect } from "next/navigation";
 import Link from "next/link";
@@ -61,9 +60,7 @@ export default async function RootLayout({
             <div className="flex-none hidden h-[100vh] lg:block">
               <SideNav />
             </div>
-            <div className="w-full lg:hidden">
-              <MobileHeader />
-            </div>
+       
             <main className="flex-grow p-[15px] md:overflow-y-auto lg:p-[50px]">
               {children}
             </main>

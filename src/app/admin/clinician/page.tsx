@@ -1,15 +1,15 @@
 "use client";
-import ClinicianTable from "@/app/admin/components/ClinicianTable";
-import { GetTherapistsData } from "@/services/admin/admin-service";
+//import ClinicianTable from "@/app/admin/components/ClinicianTable";
+//import { GetTherapistsData } from "@/services/admin/admin-service";
 import React, { useState } from "react";
 import useSWR from "swr";
 import SearchBar from "../components/SearchBar";
 
 const Page: React.FC = () => {
   const [query, setQuery] = useState("");
-   const filterStr = query ? `status=${query}` : ''
-  const { data, error, isLoading, mutate } = useSWR(`/admin/therapists?${filterStr}`,GetTherapistsData);
-  const therapistsData: any = data?.data;
+  //  const filterStr = query ? `status=${query}` : ''
+  // const { data, error, isLoading, mutate } = useSWR(`/admin/therapists?${filterStr}`,GetTherapistsData);
+  // const therapistsData: any = data?.data;
 
   const handlefilters = (e: React.ChangeEvent<HTMLSelectElement>) => {
     setQuery(e.target.value);
@@ -54,13 +54,6 @@ const Page: React.FC = () => {
         </div>
       </div>
 
-      <ClinicianTable
-        therapistsData={therapistsData}
-        mutate={mutate}
-        error={error}
-        isLoading={isLoading}
-        setQuery={setQuery}
-      />
     </>
   );
 };

@@ -1,11 +1,9 @@
 "use client";
 import React, {ChangeEvent, FormEvent, useState, useTransition} from "react";
-import { ButtonArrow } from "@/utils/svgicons";
 import Image from 'next/image';
 import success from "@/assets/images/succes.png";
 import Notification from "../components/Notification";
 import { toast } from "sonner";
-import { AddNewTherapist } from "@/services/admin/admin-service";
 
 interface FormData {
   firstName: string;
@@ -41,27 +39,27 @@ const Page = () => {
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
-    startTransition(async () => {
-      try {
-        const response = await AddNewTherapist('/admin/therapists',formData); 
-        if (response?.status === 201) {
-          setNotification("Therapist Added Successfully");
-          // toast.success("Wellness entry added successfully");
-          setFormData({
-            firstName: "",
-            lastName: "",
-            phoneNumber: 0,
-            email: "",
-            password: "",
-          });
-        } else {
-          toast.error("Failed to add wellness entry");
-        }
-      } catch (error) {
-        console.error("Error adding wellness entry:", error);
-        toast.error("An error occurred while adding the wellness entry");
-      }
-    });
+    // startTransition(async () => {
+    //   try {
+    //     const response = await AddNewTherapist('/admin/therapists',formData); 
+    //     if (response?.status === 201) {
+    //       setNotification("Therapist Added Successfully");
+    //       // toast.success("Wellness entry added successfully");
+    //       setFormData({
+    //         firstName: "",
+    //         lastName: "",
+    //         phoneNumber: 0,
+    //         email: "",
+    //         password: "",
+    //       });
+    //     } else {
+    //       toast.error("Failed to add wellness entry");
+    //     }
+    //   } catch (error) {
+    //     console.error("Error adding wellness entry:", error);
+    //     toast.error("An error occurred while adding the wellness entry");
+    //   }
+    // });
   };
   return (
     <>
@@ -94,7 +92,7 @@ const Page = () => {
           </div>
          <div className='mt-[30px] flex justify-end '>
          <button type="submit" className="button px-[30px]" disabled={isPending}>
-              {isPending ? 'Submitting...' : 'Submit'}<ButtonArrow />
+              {isPending ? 'Submitting...' : 'Submit'}
             </button>
          </div>
         </form>
