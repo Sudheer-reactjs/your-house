@@ -38,6 +38,6 @@ export const getTokenCustom = async () => {
     return cookiesOfNextAuth?.value!
 }
 
-export const getStripePk = async () => {
-    return process.env.STRIPE_PUBLISHABLE_KEY as string
-}
+// export const getStripePk = async () => {
+//     return process.env.STRIPE_PUBLISHABLE_KEY as string
+// }
