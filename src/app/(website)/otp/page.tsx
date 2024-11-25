@@ -77,10 +77,10 @@ export default function Page() {
       <div className="grid md:grid-cols-2 gap-8 md:gap-3 lg:gap-0 items-center  ">
         <div className="bg-white h-full rounded-[30px] m-5 md:m-0  ">
     <div className="flex flex-col justify-center h-full max-w-[465px] px-5 mx-auto ">
-    <p className="mb-5 md:mb-10 text-center">
+    <p className="mb-5 md:mb-9 text-center">
         <Image src={Logo} alt="animate" className="mx-auto max-w-[172px]"/>
           </p>
-          <h2 className="text-[#3C3F88] text-center font-[700] text-[30px] mb-5 md:mb-10 ">Enter OTP</h2>
+          <h2 className="text-[#3C3F88] text-center font-[700] text-[30px] mb-5 md:mb-9 ">Enter OTP</h2>
             {/* <p className="login-desc mb-5 md:mb-10">Enter 4 digit pin sent to your email address.</p> */}
             <form onSubmit={handleSubmit}>
               <div className="mb-5 md:mb-[50px] otp-inputs justify-center flex gap-[11px] items-center">

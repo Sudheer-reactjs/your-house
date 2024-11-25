@@ -64,13 +64,13 @@ const Page: React.FC = () => {
 
   return (
     <div className="bg-[#D4DFF4] pt-5 md:pt-0">
-      <div className="grid md:grid-cols-2 gap-8 md:gap-3 lg:gap-0 items-center  ">
+      <div className="grid md:grid-cols-2 gap-8 md:gap-3 lg:gap-0 items-center md:min-h-screen "> 
         <div className="bg-white h-full rounded-[30px] m-5 md:m-0  ">
-    <div className="flex flex-col justify-center h-full max-w-[465px] px-5 mx-auto ">
-      <p className="mb-5 md:mb-10 text-center">
+    <div className="flex flex-col justify-center h-full max-w-[465px] p-5 mx-auto ">
+      <p className="mb-5 md:mb-9 text-center">
         <Image src={Logo} alt="animate" className="mx-auto max-w-[172px]"/>
           </p>
-          <h2 className="text-[#3C3F88] text-center font-[700] text-[30px] mb-5 md:mb-10 ">Welcome Back</h2>
+          <h2 className="text-[#3C3F88] text-center font-[700] text-[30px] mb-5 md:mb-9 ">Welcome Back</h2>
           <div className="login rounded-[20px] bg-white">
            <div className="">
               <form onSubmit={handleSubmit}>
@@ -89,16 +89,20 @@ const Page: React.FC = () => {
                   onChange={(e) => setPassword(e.target.value)}
                 />
               
-                <div className="mb-[50px] flex justify-between items-center">
-                  <label htmlFor="" className="text-[#353E6C] ">
+                <div className="mt-[-10px] mb-[50px] flex justify-between items-center">
+                  <label htmlFor="" className="text-[#353E6C] text-[14px] ">
                     <input type="checkbox" name="" id="" className="mr-[10px]" />
                     Keep me logged in
                   </label>
-                <Link href="/forgotpassword" className="text-[#1657FF] text-sm ">Forgot Password</Link>
+                <Link href="/forgotpassword" className="text-[#1657FF] text-[14px] ">Forgot Password?</Link>
 
                 </div>
-                <button type="submit" className="button w-full">{!isPending ? 'Log In' : 'Logging In'} </button>
-              <p className="mt-5 text-center text-[#353E6C] ">Don’t have an account? <Link href="/signup" className="text-[#1657FF] ">Create one</Link> </p>
+                 <a href="/admin/dashboard" className="w-full">
+              <button type="button" className="button w-full">
+                {!isPending ? 'Log In' : 'Logging In'}
+              </button>
+            </a>
+              <p className="mt-5 text-center text-[#353E6C] text-[14px]">Don’t have an account? <Link href="/signup" className="text-[#1657FF] ">Create one</Link> </p>
               </form>
             </div>
           </div>

@@ -14,18 +14,18 @@ const [password, setPassword] = useState("");
     <div className="bg-[#D4DFF4] pt-5 md:pt-0">
       <div className="grid md:grid-cols-2 gap-8 md:gap-3 lg:gap-0 items-center  ">
         <div className="bg-white h-full rounded-[30px] m-5 md:m-0  ">
-    <div className="flex flex-col justify-center h-full max-w-[465px] px-5 mx-auto ">
-    <p className="mb-5 md:mb-10 text-center">
+    <div className="flex flex-col justify-center h-full max-w-[465px] p-5 mx-auto ">
+    <p className="mb-5 md:mb-9 text-center">
         <Image src={Logo} alt="animate" className="mx-auto max-w-[172px]"/>
           </p>
-          <h2 className="text-[#3C3F88] text-center font-[700] text-[30px] mb-5 md:mb-10 ">Forgot Password?</h2>
+          <h2 className="text-[#3C3F88] text-center font-[700] text-[30px] mb-5 md:mb-9 ">Forgot Password?</h2>
         <div className="login rounded-[20px] bg-white">
         <div className="">
           <InputField
           label="Phone Number / Email Address"
             type="email"
             value={password}
-            placeholder="Email Address"
+            placeholder="Phone Number/Email Address"
             onChange={(e) => setPassword(e.target.value)}
           />
         <Link href="/resetpassword" className="button w-full mt-[50px]">Confirm</Link>

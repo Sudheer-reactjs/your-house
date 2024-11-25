@@ -2,9 +2,11 @@
 import { useState } from "react";
 import { usePathname } from 'next/navigation';
 import Link from "next/link";
-import './SideNav.css';
+import NavLogo from "@/assets/images/logo.png"
 import { useRouter } from "next/navigation";
 import { signOut } from "next-auth/react";
+import Image from "next/image";
+import { CustomerActiveIcon, CustomerIcon, DashboardActiveIcon, DashboardIcon, ProjectActiveIcon, ProjectIcon } from "@/utils/svgicons";
 
 const SideNav = () => {
   const router = useRouter();
@@ -34,6 +36,7 @@ const SideNav = () => {
           {!isCollapsed && (
             <div className="logoContainer">
               <Link href="/admin/dashboard">
+              <Image src={NavLogo} alt="animate" className="mx-auto max-w-[172px]"/>
               </Link>
             </div>
           )}
@@ -43,66 +46,21 @@ const SideNav = () => {
         <ul className="navList">
           <li className={isActive('/admin/dashboard')}>
             <Link href="/admin/dashboard">
-              {!isCollapsed && <span>Dashboard</span>}
+              {isActive('/admin/dashboard') ? <DashboardActiveIcon /> : <DashboardIcon />}
+              Dashboard
             </Link>
           </li>
-          <li className={isActive('/admin/assignments')}>
-            <Link href="/admin/assignments">
-              {!isCollapsed && <span>Assignments</span>}
+          <li className={isActive('/admin/projects')}>
+            <Link href="/admin/projects"> 
+            {isActive('/admin/projects') ? <ProjectActiveIcon /> : <ProjectIcon />}
+              Projects
             </Link>
           </li>
-          <li className={isActive('/admin/clinician')}>
-            <Link href="/admin/clinician">
-              {!isCollapsed && <span>Clinician</span>}
+          <li className={isActive('/admin/customers')}>
+            <Link href="/admin/customers">
+             {isActive('/admin/customers') ? <CustomerActiveIcon /> : <CustomerIcon />}
+              Customers
             </Link>
-          </li>
-          <li className={isActive('/admin/new-clinician')}>
-            <Link href="/admin/new-clinician">
-              {!isCollapsed && <span>Add New Clinician</span>}
-            </Link>
-          </li>
-          <li className={isActive('/admin/client-page')}>
-            <Link href="/admin/client-page">
-              {!isCollapsed && <span>Client</span>}
-            </Link>
-          </li>
-          <li className={isActive('/admin/addnew-client')}>
-            <Link href="/admin/addnew-client">
-              {!isCollapsed && <span>Add New Client</span>}
-            </Link>
-          </li>
-          <li className={isActive('/admin/client-wellness')}>
-            <Link href="/admin/client-wellness">
-              {!isCollapsed && <span>Client Wellness</span>}
-            </Link>
-          </li>
-          <li className={isActive('/admin/add-users')}>
-            <Link href="/admin/add-users">
-              {!isCollapsed && <span>Add Users</span>}
-            </Link>
-          </li>
-          <li className={isActive('/admin/payment-request')}>
-            <Link href="/admin/payment-request">
-              {!isCollapsed && <span>Payment Requests</span>}
-            </Link>
-          </li>
-          <li className={isActive('/admin/view-task')}>
-            <Link href="/admin/view-task">
-              {!isCollapsed && <span>View Tasks</span>}
-            </Link>
-          </li>
-          {/* <li className={isActive('/call-logs')}>
-          <Link href="/call-logs">
-              <CallIcon />
-              {!isCollapsed && <span>Call Log</span>}
-            </Link>
-          </li> */}
-        </ul>
-      </div>
-      <div className="">
-        <ul className="navList">
-          <li className="!m-0 cursor-pointer flex items-center gap-2" onClick={handleLogout} >
-            <span className="text-[#283C63] text-[600]">Log Out</span>
           </li>
         </ul>
       </div>

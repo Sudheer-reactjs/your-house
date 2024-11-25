@@ -38,11 +38,11 @@ const Page: React.FC = () => {
       <div className="bg-[#D4DFF4] pt-5 md:pt-0">
       <div className="grid md:grid-cols-2 gap-8 md:gap-3 lg:gap-0 items-center  ">
       <div className="bg-white h-full rounded-[30px] m-5 md:m-0  ">
-      <div className="flex flex-col justify-center h-full max-w-[465px] px-5 mx-auto ">
+      <div className="flex flex-col justify-center h-full max-w-[465px] p-5 mx-auto ">
       <p className="mb-5 md:mb-10 text-center">
         <Image src={Logo} alt="animate" className="mx-auto max-w-[172px]"/>
           </p>
-          <h2 className="text-[#3C3F88] text-center font-[700] text-[30px] mb-5 md:mb-10 ">Forgot Password?</h2>
+          <h2 className="text-[#3C3F88] text-center font-[700] text-[30px] mb-5 md:mb-10 ">Welcome Back</h2>
     
             <div className="login rounded-[20px] bg-white">
               <div className="">
@@ -67,7 +67,7 @@ const Page: React.FC = () => {
                   type="number"
                   label="Phone Number"
                   value={phoneNumber}
-                  placeholder="Mobile Number"
+                  placeholder="+1 245 125 2356"
                   required
                   onChange={(e) => setPhoneNumber(e.target.value)}
                 />
@@ -88,7 +88,7 @@ const Page: React.FC = () => {
                   required
                   onChange={(e) => setConfirmPassword(e.target.value)}
                 />
-                <button className="button w-full cursor-pointer" onClick={handleSignup}>Sign Up </button>
+                <button className="button w-full cursor-pointer mt-[50px]" onClick={handleSignup}>Sign Up </button>
             <p className="text-[#353E6C] mt-5 text-center   ">Already have an account? <Link href='/' className="text-[#1657FF] ">Login</Link> </p>
               </div>
             </div>

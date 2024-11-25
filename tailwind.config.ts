@@ -14,8 +14,11 @@ const config: Config = {
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
       },
       fontFamily: {
-        antic: ['var(--font-antic)'],
-        gotham: ['var(--font-gotham)'],
+        sfproDisplaymedium: ['var(--font-SF-Pro-Display-Medium)'],
+        sfproDisplaythin: ['var(--font-SF-Pro-Display-Thin)'],
+        sfproDisplayregular: ['var(--font-SF-Pro-Display)'],
+        sfproDisplaysemibold: ['var(--font-SF-Pro-Display-Semibold)'], 
+        sfproDisplaybold: ['var(--font-SF-Pro-Display-Bold)'],
       },
       container: {
         center: true,

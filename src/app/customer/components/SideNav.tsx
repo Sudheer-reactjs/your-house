@@ -2,9 +2,10 @@
 import { useState } from "react";
 import { usePathname } from 'next/navigation';
 import Link from "next/link";
-import './SideNav.css';
 import { useRouter } from "next/navigation";
 import { signOut } from "next-auth/react";
+import NavLogo from "@/assets/images/logo.png"
+import Image from "next/image";
 
 const SideNav = () => {
   const router = useRouter();
@@ -30,6 +31,7 @@ const SideNav = () => {
           {!isCollapsed && (
             <div className="logoContainer">
               <Link href="/customer/dashboard">
+                <Image src={NavLogo} alt="animate" className="mx-auto max-w-[172px]"/> 
               </Link>
             </div>
           )}

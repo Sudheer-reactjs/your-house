@@ -4,16 +4,32 @@ import "./globals.css";
 import { SessionProvider } from "next-auth/react";
 import localFont from 'next/font/local'
 
-const gothamPro = localFont({
-  src: '../assets/fonts/GothamPro.ttf',
+const SFProDisplay = localFont({
+  src: '../assets/fonts/SfProDisplayRegular.otf', 
   display: 'swap',
-  variable: '--font-gotham',
+  variable: '--font-SF-Pro-Display', 
 })
-const anticDidone = localFont({
-  src: '../assets/fonts/AnticDidoneRegular.ttf',
+const SFProDisplaySemibold = localFont({
+  src: '../assets/fonts/SFProDisplaySemibold.otf', 
   display: 'swap',
-  variable: '--font-antic',
+  variable: '--font-SF-Pro-Display-Semibold', 
 })
+const SFProDisplayMedium = localFont({
+  src: '../assets/fonts/SFProDisplayMedium.otf', 
+  display: 'swap',
+  variable: '--font-SF-Pro-Display-Medium', 
+})
+const SFProDisplayBold = localFont({
+  src: '../assets/fonts/SFProDisplayBold.otf', 
+  display: 'swap',
+  variable: '--font-SF-Pro-Display-Bold', 
+})
+const SFProDisplayThin = localFont({
+  src: '../assets/fonts/SFProDisplayThin.otf', 
+  display: 'swap',
+  variable: '--font-SF-Pro-Display-Thin', 
+})
+
 
 export default function RootLayout({
   children,
@@ -25,7 +41,7 @@ export default function RootLayout({
     <html lang="en">
       <SessionProvider>
           <Toaster richColors />
-        <body className={`${gothamPro.variable} ${anticDidone.variable}`}>
+        <body className={`${SFProDisplay.variable} ${SFProDisplaySemibold.variable} ${SFProDisplayMedium.variable} ${SFProDisplayBold.variable} ${SFProDisplayThin.variable}`}>
           {children}
         </body>
       </SessionProvider>

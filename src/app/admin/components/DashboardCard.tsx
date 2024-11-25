@@ -2,22 +2,18 @@
 import React from 'react';
 
 interface OverviewProps {
-  icon: React.ReactNode; 
   title: string;
   value: number | string;
+  bgColor: string
+  bgImage?: string;
 };
-const DashboardCard: React.FC<OverviewProps> = ({ icon, title, value }) => {
+const DashboardCard: React.FC<OverviewProps> = ({ title, value, bgColor }) => {
     return (
       <>
-        <div className="bg-white rounded-[10px] border border-[#c6e2f2] md:py-6 md:px-5 p-[15px] flex items-center gap-3 md:gap-5">
-       <div>
-        <p className='h-[50px] w-[50px] md:h-[70px] md:w-[70px] rounded-full grid place-items-center border border-[#C7E4F4] bg-[#EEF7FC]  '>{icon}</p>
+        <div style={{ backgroundColor: bgColor }} className=" card-bg min-h-[120px] rounded-[20px] py-[20px] px-[25px] flex flex-col  gap-3 md:gap-3">
+          <p className='leading-normal font-sfproDisplaybold text-[20px] text-[#fff] '>{title}</p>
+          <h3 className='text-[28px] md:text-[36px] text-[#fff] font-sfproDisplaymedium'>{value} </h3>
        </div>
-       <div>
-        <p className='leading-normal font-gothamMedium '>{title}</p>
-        <h3 className='md:text-[28px]'>{value} </h3>
-       </div>
-        </div>
       </>
     );
   };
