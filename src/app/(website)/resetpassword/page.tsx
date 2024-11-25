@@ -49,7 +49,7 @@ const Page = () => {
           />
             <InputField
             type="password"   
-            label='Confirm Password'
+            label='Confirm Password' 
             value={newPassword}
             placeholder="******"
             onChange={(e) => setNewPassword(e.target.value)}
